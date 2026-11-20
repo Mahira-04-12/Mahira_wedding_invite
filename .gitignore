@@ -1,4 +1,4 @@
-﻿# Dependencies
+# Dependencies
 node_modules/
 package-lock.json
 
@@ -19,4 +19,4 @@ Thumbs.db
 public/assets/*
 !public/assets/hero-portrait.jpg
 !public/assets/hero-landscape.jpg
-!public/assets/song.mp3
+!public/assets/invite.mp3

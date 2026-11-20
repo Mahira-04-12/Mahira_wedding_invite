@@ -269,7 +269,7 @@ body::before {
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: #0D2818 url('assets/hero-portrait.jpg') 65% 40% / cover no-repeat;
+    background: #0D2818 url('assets/hero-portrait.jpg') 50% 100% / cover no-repeat;
     overflow: hidden;
     padding: 100px 24px 60px;
 }
@@ -277,7 +277,7 @@ body::before {
 @media (orientation: landscape) {
     .hero {
         background-image: url('assets/hero-landscape.jpg');
-        background-position: center 30%;
+        background-position: 30% 55%;
     }
 }
 
@@ -300,6 +300,86 @@ body::before {
     position: relative;
     z-index: 2;
     max-width: 720px;
+}
+
+/* Wide screens: couple is on the left of the photo, so text sits on the right */
+@media (orientation: landscape) and (min-width: 900px) {
+    .hero {
+        justify-content: flex-end;
+        padding-right: 6vw;
+    }
+
+    .hero-content {
+        width: min(46vw, 640px);
+    }
+
+    .hero-overlay {
+        background:
+            linear-gradient(90deg, rgba(8, 22, 14, 0) 0%, rgba(8, 22, 14, .1) 35%, rgba(8, 22, 14, .55) 60%, rgba(8, 22, 14, .7) 100%),
+            linear-gradient(180deg, rgba(8, 22, 14, .45) 0%, rgba(8, 22, 14, 0) 30%, rgba(8, 22, 14, 0) 75%, rgba(8, 22, 14, .45) 100%);
+    }
+
+    .hero .hero-scroll-cue {
+        left: auto;
+        right: calc(6vw + min(23vw, 320px));
+        transform: translateX(50%);
+    }
+}
+
+/* Phones / portrait: couple is in the lower part of the photo, so text sits in the top half */
+@media (orientation: portrait) {
+    .hero {
+        align-items: flex-start;
+        padding-top: max(56px, 7svh);
+    }
+
+    .hero-overlay {
+        background: linear-gradient(180deg, rgba(8, 22, 14, .72) 0%, rgba(8, 22, 14, .6) 40%, rgba(8, 22, 14, .15) 58%, rgba(8, 22, 14, 0) 70%, rgba(8, 22, 14, 0) 88%, rgba(8, 22, 14, .35) 100%);
+    }
+
+    .hero .hero-eyebrow {
+        margin-bottom: 10px;
+    }
+
+    .hero .hero-swash {
+        margin-bottom: 14px;
+    }
+
+    .hero .name {
+        font-size: clamp(2.6rem, 12vw, 5rem);
+    }
+
+    .hero .date-full {
+        letter-spacing: 1px;
+        font-size: .85rem;
+    }
+
+    .hero .hero-and {
+        margin: 2px 0;
+    }
+
+    .hero .hero-sub {
+        margin-top: 12px;
+    }
+
+    .hero .hero-date {
+        margin-top: 14px;
+    }
+
+    .hero .hero-cta {
+        margin-top: 20px;
+        padding: 11px 22px;
+    }
+}
+
+@media (orientation: portrait) and (max-height: 760px) {
+    .hero {
+        padding-top: 40px;
+    }
+
+    .hero .hero-cta {
+        margin-top: 14px;
+    }
 }
 
 .hero-eyebrow {
