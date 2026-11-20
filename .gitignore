@@ -1,4 +1,4 @@
-# Dependencies
+﻿# Dependencies
 node_modules/
 package-lock.json
 
@@ -6,7 +6,7 @@ package-lock.json
 .env
 .env.local
 
-# RSVP data (contains guest personal info — don't commit to a public repo)
+# RSVP data (contains guest personal info â€” don't commit to a public repo)
 server/data/rsvps.json
 
 # OS / editor junk
@@ -17,6 +17,6 @@ Thumbs.db
 
 # Original photos stay local; only assets used by the site are published
 public/assets/*
-!public/assets/collage-portrait.jpg
-!public/assets/collage-landscape.jpg
+!public/assets/hero-portrait.jpg
+!public/assets/hero-landscape.jpg
 !public/assets/song.mp3
