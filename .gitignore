@@ -1,0 +1,22 @@
+# Dependencies
+node_modules/
+package-lock.json
+
+# Environment variables
+.env
+.env.local
+
+# RSVP data (contains guest personal info — don't commit to a public repo)
+server/data/rsvps.json
+
+# OS / editor junk
+.DS_Store
+Thumbs.db
+.vscode/
+*.log
+
+# Original photos stay local; only assets used by the site are published
+public/assets/*
+!public/assets/collage-portrait.jpg
+!public/assets/collage-landscape.jpg
+!public/assets/song.mp3
