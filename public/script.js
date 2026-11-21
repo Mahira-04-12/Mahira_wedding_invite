@@ -54,7 +54,6 @@ document.addEventListener("DOMContentLoaded", () => {
             ".hero-marigold-string", { opacity: 0, scaleX: 0, duration: 0.8, ease: "power2.out" },
             "-=0.6"
         )
-        .from(".hero-eyebrow", { opacity: 0, y: 16, duration: 0.7 }, "-=0.4")
         .from("#hero-ganesh", { opacity: 0, y: 10, duration: 0.7 }, "-=0.5")
         .from(
             ".name-groom .char", { opacity: 0, yPercent: 120, rotate: 6, duration: 0.9, stagger: 0.04 },
