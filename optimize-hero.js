@@ -2,7 +2,7 @@
 const a = (f) => require("path").join(__dirname, "public", "assets", f);
 (async () => {
   const jobs = [
-    ["opt1.JPG", "hero-portrait.jpg", 1200, 1800],
+    ["potrait_fin.JPG", "hero-portrait.jpg", 1200, 1800],
     ["landscape_fin.JPG", "hero-landscape.jpg", 2400, 1600],
   ];
   for (const [src, out, w, h] of jobs) {

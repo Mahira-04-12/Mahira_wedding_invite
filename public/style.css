@@ -326,61 +326,87 @@ body::before {
     }
 }
 
-/* Phones / portrait: couple is in the lower part of the photo, so text sits in the top half */
+/* Phones / portrait: photo fills the top and fades into deep green; text sits below the faces */
 @media (orientation: portrait) {
     .hero {
-        align-items: flex-start;
-        padding-top: max(56px, 7svh);
+        background-image: none;
+        align-items: flex-end;
+        padding: 0 22px max(34px, 5svh);
+    }
+
+    .hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 68%;
+        background: url('assets/hero-portrait.jpg') 62% 22% / cover no-repeat;
+        -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 50%, rgba(0, 0, 0, .7) 66%, rgba(0, 0, 0, .3) 84%, transparent 100%);
+        mask-image: linear-gradient(180deg, #000 0%, #000 50%, rgba(0, 0, 0, .7) 66%, rgba(0, 0, 0, .3) 84%, transparent 100%);
+        z-index: 0;
     }
 
     .hero-overlay {
-        background: linear-gradient(180deg, rgba(8, 22, 14, .72) 0%, rgba(8, 22, 14, .6) 40%, rgba(8, 22, 14, .15) 58%, rgba(8, 22, 14, 0) 70%, rgba(8, 22, 14, 0) 88%, rgba(8, 22, 14, .35) 100%);
+        background:
+            radial-gradient(ellipse 90% 40% at 50% 100%, rgba(201, 162, 75, .14) 0%, rgba(201, 162, 75, 0) 70%),
+            linear-gradient(180deg, rgba(13, 40, 24, .45) 0%, rgba(13, 40, 24, 0) 12%);
     }
 
     .hero .hero-eyebrow {
-        margin-bottom: 10px;
+        margin-bottom: 8px;
+        letter-spacing: 4px;
     }
 
     .hero .hero-swash {
-        margin-bottom: 14px;
+        margin-bottom: 10px;
+        font-size: 1.05rem;
     }
 
     .hero .name {
-        font-size: clamp(2.6rem, 12vw, 5rem);
-    }
-
-    .hero .date-full {
-        letter-spacing: 1px;
-        font-size: .85rem;
+        font-size: clamp(2.8rem, 13.5vw, 5.2rem);
+        color: #FFF8EC;
+        text-shadow: 0 2px 6px rgba(0, 0, 0, .5), 0 0 28px rgba(232, 201, 122, .25);
     }
 
     .hero .hero-and {
-        margin: 2px 0;
+        margin: 0;
     }
 
     .hero .hero-sub {
-        margin-top: 12px;
+        margin-top: 10px;
     }
 
     .hero .hero-date {
-        margin-top: 14px;
+        margin-top: 12px;
+    }
+
+    .hero .date-full {
+        letter-spacing: 1.5px;
+        font-size: .85rem;
     }
 
     .hero .hero-cta {
-        margin-top: 20px;
+        margin-top: 18px;
         padding: 11px 22px;
+        border-color: rgba(232, 201, 122, .6);
+    }
+
+    .hero .hero-scroll-cue {
+        display: none;
     }
 }
 
 @media (orientation: portrait) and (max-height: 760px) {
-    .hero {
-        padding-top: 40px;
+    .hero::before {
+        height: 62%;
     }
 
     .hero .hero-cta {
-        margin-top: 14px;
+        margin-top: 12px;
     }
 }
+
 
 .hero-eyebrow {
     font-family: var(--label);
